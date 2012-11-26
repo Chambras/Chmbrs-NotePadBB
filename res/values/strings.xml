@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+    Copyright 2011 Marcelo Zambrana Villarroel.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+
+	<string name="appVersionName">0.2 Beta</string>
+	<string name="appName">Chmbrs NotePad</string>
+	<string name="appEmail">chmbrsnotepadblackberry@gmail.com</string>
+	<string name="appWebPage">http://marcelozambranav.blogspot.com/</string>
+	<string name="noNotes">No notes in this account.</string>
+	
+<!--	home menu items-->
+	<string name="addNoteMenu">Add Note</string>
+	<string name="searchMenu">Search</string>
+	<string name="settingsMenu">Settings</string>
+	
+<!--	new note menu items-->
+	<string name="menuNewDiscardNote">Discard Note</string>
+	
+<!--	edit note menu items-->
+	<string name="menuEditNoteTitle">Edit Title</string>
+	<string name="menuEditDeleteNote">Delete Note</string>
+	<string name="menuEditShareNote">Share Note</string>
+	<string name="menuEditDicardNotesChanges">Discard Changes</string>
+	<string name="menuEditReminderNote">Set Reminder</string>
+	
+
+<!--activity titles-->
+	<string name="createNewNoteTitle">Create New Note</string>	
+	<string name="editNoteTitle">Edit Note</string>
+	<string name="searchResultsTitle">Results for:</string>
+	<string name="notePadPreferencesTitle">Chmbrs NotePad Preferences</string>
+	<string name="notePadReminderTitle">Set Reminder Type</string>
+	<string name="notePadAboutMeTitle">About Me</string>
+	<string name="notePadChangeLogTitle">Versions Change Log</string>
+	<string name="notePadExportNotesTitle">Export all your notes</string>
+
+<!-- List notes activity -->
+	<string name="dateCreated">Create Date: </string>
+
+<!--	title activity-->
+	<string name="updateTitle">Update Title:</string>
+	<string name="updateTitleButton">Save</string>
+	
+<!--	context menu items-->
+	<string name="contextMenuOpenNote">Open Note</string>
+	<string name="contentextMenuDeleteNote">Delete Note</string>
+	<string name="contentextMenuEditNoteTitle">Edit Title</string>
+	<string name="contentextMenuShareNote">Share Note</string>
+	<string name="contentmenuExportNote">Export Note to Text File</string>
+	
+<!--	Toast notifications-->
+	<string name="noteSaved">The note has been saved.</string>
+	<string name="noteExported">The note has been exported.</string>
+	<string name="notesExported">All your notes have been exported to your SD card.</string>
+	<string name="noSDCard">SD card not available</string>
+	
+<!-- Symbols -->
+	<string name="symbolOne">1</string>
+	<string name="symbolPlus">+</string>
+	<string name="symbolMinus">-</string>
+	
+<!--	search-->
+	<string name="searchNotesHint">Search Notes</string>
+	<string name="searchSettingsDescription">Titles and Text in your Notes</string>
+	
+<!--	notifications-->
+	<string name="notificationTitle">NotePad Reminder</string>
+	<string name="notificationConfirmation">Reminder set to:</string>
+
+<!--	reminders menu-->
+	<string name="reminderMenuMinutes">Minutes</string>
+	<string name="reminderMenuHours">Hours</string>
+	<string name="reminderMenuDays">Days</string>
+	<string name="reminderOK">OK</string>
+	<string name="reminderCancel">Cancel</string>
+	
+<!--preferences screen-->
+	<string name="prefCatEditorSettings">Editor Settings</string>
+		<string name="prefCatTextSize">Text Size</string>
+		<string name="prefCatTextSizeSummary">Select the text size</string>
+		
+		<string name="prefCatGuideLines">Guide Lines</string>
+		<string name="prefCatGuideLinesSummary">Display Horizontal Help Lines</string>
+		<string name="prefCatFontType">Font Type</string>
+		<string name="prefCatFontTypeSummary">Select the text font type</string>
+		
+		<string name="prefCatAutoLink">Auto Link</string>
+		<string name="prefCatAutoLinkSummary">Will Automatically link phones, addresses and web links</string>
+		
+	<string name="prefCatEditorColorSettings">Editor Colors</string>
+		<string name="prefCatBackgroundColor">Background Color</string>
+		<string name="prefCatBackgroundColorSummary">Select the editor Background color</string>
+		<string name="prefCatTextColor">Text Color</string>
+		<string name="prefCatTextColorSummary">Select the editor Text color</string>
+		<string name="prefCatLinesColor">Guide Lines Color</string>
+		<string name="prefCatLinesColorSummary">Select the editor Guide Lines color</string>
+	
+	<string name="prefCatNotifications">Notifications</string>
+		<string name="prefCatRingTone">RingTone</string>
+		<string name="prefCatRingToneSummary">Select the reminder ringtone</string>
+		<string name="prefCatLEDColor">LED Color</string>
+		<string name="prefCatLEDColorSummary">Select the Reminders LED Color</string>
+
+		<string name="prefCatVibrate">Vibrate</string>
+		<string name="prefCatVibrateSummary">Reminders will vibrate</string>
+		
+	<string name="prefCatTools">Tools</string>
+		<string name="prefCatExportNotes">Export Notes</string>
+		<string name="prefCatExportNotesSummary">Will Export all Notes to SD Card</string>
+		<string name="prefCatTitleSize">Title Size</string>
+		<string name="prefCatTitleSizeSummary">Default Title Size</string>
+		<string name="prefCatSorType">Sort Type</string>
+		<string name="prefCatSorTypeSummary">Select Sort Type</string>
+		
+		<string name="exportNotesMessage">Exporting, please wait&#8230;</string>
+		
+	<string name="prefCatAbout">About Me</string>
+		<string name="prefCatAboutMe">About Me</string>
+		<string name="prefCatAboutMeSummary">Software Version and some Details</string>
+		<string name="prefCatChangeLog">Change Log</string>
+		<string name="prefCatChangeLogSummary">History Changes</string>
+		<string name="prefCatSendFeedBack">Send FeedBack</string>
+		<string name="prefCatSendFeedBackSummary">Send comments, new ideas, report bugs and issues.</string>
+		<string name="sendFeedBackTitle">Sending FeedBack</string>
+		<string name="prefCatMoreInfoSummary">Opens my web blog in the browser application.</string>
+		<string name="prefCatMoreInfoTitle">More Info</string>
+
+	<string name="aboutMeDescription">I am just a geek who wants to learn new things. I developed this small application just
+		for fun and how to learn to port applications to the BlackBerry PlayBook. 
+		\n \nIt has basically everything they suggest to have like Basic Preferences Settings. 
+		I tried to follow all their good practices in UI and code. 
+	</string>
+	<string name="currentVersionTitle">Current Version:</string>
+	<string name="grettingsTitle">Thanks to:</string>
+	<string name="grettingsList">* Jared for helping me with the application icon.</string>
+	<string name="dedicationTitle">To:</string>
+	<string name="dedicationList"> Oli and mi Chamaco :) you give me the strength I need to continue :)</string>
+	
+	<string name="buildTitle">Build Notes:</string>
+
+
+<!-- VERSIONS CHANGE LOG INFORMATION -->	
+<!-- First Version -->
+	<string name="version1">Version 0.1 Beta:</string>
+	<string name="buildNotesVersion1">
+		* Basic features like, new, edit, update, delete Notes.\n
+		* Set reminders in notes.\n
+		* Custom Preferences.\n
+		* Export Notes to SD Card.
+	</string>
+		
+<!-- Second Version near future-->
+	<string name="version2">Version 0.2 Beta:</string>
+	<string name="buildNotesVersion2">
+		* More Tablet friendly by doing a complete UI redesign.\n
+		* Portrait and Landscape support.\n
+		* Some performance improvements.
+	</string>
+</resources>

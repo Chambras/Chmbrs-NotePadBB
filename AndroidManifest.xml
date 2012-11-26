@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2011 Marcelo Zambrana Villarroel.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.chmbrs.apps.notepad"
+      android:versionCode="8" 
+      android:versionName="@string/appVersionName" android:installLocation="internalOnly">
+    <uses-sdk android:minSdkVersion="10" 
+        	  android:targetSdkVersion="10"
+          	  android:maxSdkVersion="15" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.FLASHLIGHT"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:smallScreens="true" android:normalScreens="true" android:resizeable="true"/>
+    <!-- Hardware features -->
+    <uses-feature android:name="android.hardware.faketouch" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    
+    <application android:icon="@drawable/icon" android:label="@string/appName" android:name="NotePadApplication" android:allowClearUserData="true"
+         android:theme="@style/AppTheme">
+    	<provider android:name="NotePadProvider" android:authorities="com.chmbrs.apps.notepad" android:exported="false" />
+        <activity android:name="NoteList"
+                  android:label="@string/appName"
+                 >
+<!-- singletop it is better for performance but back behavior gets broken since it is only one activity instance. Need to research more-->
+<!--                  android:launchMode="singleTop "-->
+                  
+			<intent-filter>
+            	<action android:name="android.intent.action.SEARCH" />
+        	</intent-filter>
+        	<meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+                   
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.chmbrs.note" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.chmbrs.note" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="NotePadEditor"
+                  android:label="@string/editNoteTitle" 
+                  android:screenOrientation="sensor"
+                  android:configChanges="keyboardHidden|orientation"
+                  android:exported="false">
+                  
+        	<intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+				<action android:name="com.chmbrs.apps.notepad.notes.action.EDIT_NOTE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.chmbrs.note" />
+        	</intent-filter>
+        	
+        	<intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/vnd.chmbrs.note" />
+            </intent-filter>
+            
+        </activity>
+        
+        <activity android:name="NotePadTitleEditor"
+        		  android:label="@string/updateTitle"
+        		  android:theme="@style/DialogTheme"
+        		  android:windowSoftInputMode="stateVisible"
+        		  android:exported="false">
+        	<intent-filter>
+                <action android:name="com.chmbrs.apps.notepad.notes.action.EDIT_TITLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.chmbrs.note" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="NotePadPreferences" android:label="@string/notePadPreferencesTitle" android:theme="@style/AppTheme"/>
+        
+        <activity android:name="NotePadReminder" 
+        	android:label="@string/notePadReminderTitle" 
+        	android:theme="@style/DialogTheme"
+        	android:windowSoftInputMode="stateVisible"
+        	android:exported="false">
+        	<intent-filter>
+				<action android:name="com.chmbrs.apps.notepad.notes.action.NOTE_SET_REMINDER"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+				<data android:mimeType="vnd.android.cursor.item/vnd.chmbrs.note" />
+			</intent-filter>
+        </activity>
+        <activity android:name="ExportNotes" 
+        	android:theme="@android:style/Theme.Dialog" 
+        	android:label="@string/notePadExportNotesTitle">
+        </activity>
+        <activity android:name="AboutMe" 
+        	android:theme="@android:style/Theme.Dialog" 
+        	android:label="@string/notePadAboutMeTitle">
+        </activity>
+        <activity android:name="ChangeLog" 
+        	android:theme="@android:style/Theme.Light" 
+        	android:label="@string/notePadChangeLogTitle">
+        </activity>
+        	
+        <receiver android:name="NotePadAlarm" android:exported="false">
+        	<intent-filter>
+        		<action android:name="com.chmbrs.apps.notepad.notes.action.NOTE_REMINDER" />
+        		<data android:mimeType="vnd.android.cursor.item/vnd.chmbrs.note" />
+        	</intent-filter>
+        </receiver>
+    </application>
+</manifest>
